@@ -1,7 +1,7 @@
 <div align="center">
     <img alt="Logo" src="assets/sesmon.png" width="260">
     <h1>sesmon</h1>
-    <p>SCSI Enclosure Services (SES)<br><b>Monitoring and Alerting Daemon</b></p>
+    <p>SCSI Enclosure Services (SES)<br>Monitoring and Alerting Daemon</p>
 </div>
 
 <div align="center">
