@@ -35,8 +35,10 @@ source:
   enabled: true
 
 archives:
-  - format_overrides:
-    - formats: [ 'binary' ]
+  -
+    files:
+      - LICENSE
+      - config.default.yaml
 
 signs:
   - artifacts: checksum
