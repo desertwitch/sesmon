@@ -34,10 +34,10 @@ enclosure, specifically only the status descriptors and their following fields
 - `voltage` (if present)
 - `current` (if present)
 
-The alerts themselves are emitted to standard error (`stderr`), with the
-possibility of configuring an external notification agent, a script that is
-called on alert with the relevant alert information (device information,
-changes) passed via arguments.
+The alerts themselves are emitted to standard error (`stderr`), and it is also
+possible to configure an external notification agent for each device. Such an
+agent could be a shell script or any other executable, which is then called
+on alert, with the relevant information passed via positional arguments.
 
 ## Dependencies
 
