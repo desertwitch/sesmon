@@ -58,7 +58,7 @@ system locations; ensure they are executable by running `chmod +x` before use.
 
 - `sg_ses` (as usually a part of `sg3_utils` packages)
 
-## Building from source:
+## Building from source
 
 ```bash
 git clone https://github.com/desertwitch/sesmon.git
@@ -66,7 +66,7 @@ cd sesmon
 make all
 ```
 
-## Running a built executable:
+## Running a built executable
 
 ```bash
 ./sesmon --help
