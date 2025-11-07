@@ -19,7 +19,7 @@
 
 ## Overview
 
-`sesmon` is a monitoring and alerting daemon for SES-capable SCSI enclosures. It
+sesmon is a monitoring and alerting daemon for SES-capable SCSI enclosures. It
 periodically polls `sg_ses` for a JSON-format `--all` dump, comparing changes
 between previous and most recent device data. An alert is raised if changes of
 status-relevant fields were detected. This means for each SES element of the
@@ -34,8 +34,11 @@ fields (most are common among all element status descriptors) are monitored:
 - `voltage` (if present)
 - `current` (if present)
 
-Although the code itself is relatively modular so this could be expanded
-easily to observe other SES element descriptors and fields, if so required.
+Although the code itself is relatively modular so this could be expanded easily
+to observe other SES element descriptors and fields, if so required. The alerts
+themselves are emitted to standard error (`stderr`), with the possibility of
+configuring an external notification script, that is called on alert with the
+relevant alert information (device information, changes) passed via arguments.
 
 ## Dependencies
 
