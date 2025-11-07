@@ -19,7 +19,7 @@
 
 ## Overview
 
-sesmon is a monitoring and alerting daemon for SES-capable SCSI enclosures. It
+`sesmon` is a monitoring and alerting daemon for SES-capable SCSI enclosures. It
 periodically polls `sg_ses` for a JSON-format `--all` dump, comparing changes
 between previous and most recent device data. An alert is raised if changes of
 status-relevant fields were detected. This means for each SES element of the
@@ -63,7 +63,7 @@ cd sesmon
 make all
 ```
 
-#### Running a built executable:
+## Running a built executable:
 
 ```bash
 ./sesmon --help
