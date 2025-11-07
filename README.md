@@ -36,8 +36,9 @@ enclosure, specifically only the status descriptors and their following fields
 
 The alerts themselves are emitted to standard error (`stderr`), and it is also
 possible to configure an external notification agent for each device. Such an
-agent could be a shell script or any other executable, which is then called
-on alert, with the relevant information passed via positional arguments.
+agent could be a shell script or any other executable, which is then called on
+alert, with the relevant information passed via positional arguments (as text
+and JSON).
 
 ## Installation
 
