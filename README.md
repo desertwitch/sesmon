@@ -11,7 +11,7 @@
     <a href="https://goreportcard.com/report/github.com/desertwitch/sesmon"><img alt="Go Report" src="https://goreportcard.com/badge/github.com/desertwitch/sesmon"></a>
     <a href="./LICENSE"><img alt="License" src="https://img.shields.io/github/license/desertwitch/sesmon"></a>
     <br>
-    <a href="https://app.codecov.io/gh/desertwitch/sesmon"><img alt="Codecov" src="https://codecov.io/github/desertwitch/sesmon/graph/badge.svg?token=5CR32ES41N"></a>
+    <a href="https://app.codecov.io/gh/desertwitch/sesmon"><img alt="Codecov" src="https://codecov.io/github/desertwitch/sesmon/graph/badge.svg?token=7D4C62K0QO"></a>
     <a href="https://github.com/desertwitch/sesmon/actions/workflows/golangci-lint.yml"><img alt="Lint" src="https://github.com/desertwitch/sesmon/actions/workflows/golangci-lint.yml/badge.svg"></a>
     <a href="https://github.com/desertwitch/sesmon/actions/workflows/golang-tests.yml"><img alt="Tests" src="https://github.com/desertwitch/sesmon/actions/workflows/golang-tests.yml/badge.svg"></a>
     <a href="https://github.com/desertwitch/sesmon/actions/workflows/golang-build.yml"><img alt="Build" src="https://github.com/desertwitch/sesmon/actions/workflows/golang-build.yml/badge.svg"></a>
