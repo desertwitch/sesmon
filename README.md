@@ -72,7 +72,7 @@ make all
 ./sesmon --help
 ```
 
-## Configuration Example
+## Configuration
 
 ```yaml
 # sesmon configuration file
