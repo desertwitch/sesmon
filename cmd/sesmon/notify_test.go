@@ -98,7 +98,7 @@ func Test_ScriptNotifierConfig_MarshalJSON_Success(t *testing.T) {
 	data, err := json.Marshal(cfg)
 	require.NoError(t, err)
 
-	var result map[string]interface{}
+	var result map[string]any
 	err = json.Unmarshal(data, &result)
 	require.NoError(t, err)
 
