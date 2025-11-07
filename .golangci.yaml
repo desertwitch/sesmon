@@ -1,0 +1,67 @@
+version: "2"
+linters:
+  default: all
+  disable:
+    - depguard
+    - exhaustruct
+    - gochecknoglobals
+    - gosec
+    - ireturn
+    - noinlineerr
+    - varnamelen
+    - tagliatelle
+    - wsl
+    - wsl_v5
+  settings:
+    cyclop:
+      max-complexity: 20
+      package-average: 20
+    funlen:
+      lines: 85
+      statements: 50
+      ignore-comments: true
+    gocognit:
+      min-complexity: 40
+    lll:
+      line-length: 180
+    nestif:
+      min-complexity: 10
+    paralleltest:
+      ignore-missing-subtests: true
+    staticcheck:
+      checks:
+        - all
+        - -S1008
+  exclusions:
+    generated: lax
+    presets:
+      - common-false-positives
+      - std-error-handling
+    rules:
+      - linters:
+          - dupl
+          - err113
+          - funlen
+          - gosmopolitan
+          - ireturn
+          - revive
+          - testpackage
+          - goconst
+          - unparam
+        path: _test\.go
+    paths:
+      - third_party$
+      - builtin$
+      - examples$
+formatters:
+  enable:
+    - gci
+    - gofmt
+    - gofumpt
+    - goimports
+  exclusions:
+    generated: lax
+    paths:
+      - third_party$
+      - builtin$
+      - examples$

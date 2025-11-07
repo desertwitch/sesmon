@@ -1,0 +1,53 @@
+version: 2
+
+project_name: sesmon
+
+before:
+  hooks:
+    - make clean
+    - make vendor
+    - make lint
+    - make test
+
+builds:
+  - id: sesmon
+    main: ./cmd/sesmon
+    binary: sesmon
+    env:
+      - CGO_ENABLED=0
+      - GOFLAGS=-mod=vendor
+    flags:
+      - -trimpath
+    ldflags:
+      - -w
+      - -s
+      - -X main.Version={{.Version}}
+      - -buildid=
+    goos:
+      - linux
+    goarch:
+    - amd64
+    - arm
+    - arm64
+    - 386
+
+source:
+  enabled: true
+
+archives:
+  - format_overrides:
+    - formats: [ 'binary' ]
+
+signs:
+  - artifacts: checksum
+
+release:
+  footer: |
+    Files without an extension are all static binaries for the most common architectures.  
+    Most users will want the `linux_amd64` binary (see installation instructions in `README`).  
+
+    `.txz`, `.asc` and `.md5` files are part of the Slackware distribution package.  
+    These specific packages are offered as a service for fellow Unraid OS enthusiasts.  
+
+    Do note that any release files are unattended builds and served without any warranties.
+

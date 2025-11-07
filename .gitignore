@@ -1,0 +1,10 @@
+/config.yaml
+/coverage.tmp
+/coverage.txt
+/output*
+/sesmon
+/slack-desc
+/TODO
+/vendor
+# Added by goreleaser init:
+dist/
