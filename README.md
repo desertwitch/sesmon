@@ -39,10 +39,6 @@ possible to configure an external notification agent for each device. Such an
 agent could be a shell script or any other executable, which is then called
 on alert, with the relevant information passed via positional arguments.
 
-## Dependencies
-
-- `sg_ses` (as usually a part of `sg3_utils` packages)
-
 ## Installation
 
 To build from source, a `Makefile` is included with the project's source code.
@@ -56,6 +52,10 @@ system locations; ensure they are executable by running `chmod +x` before use.
 > All builds from source are designed to generate [reproducible builds](https://reproducible-builds.org/),
 > meaning that they should compile as byte-identical to the respective released binaries and also have the
 > exact same checksums upon integrity verification.
+
+## Dependencies
+
+- `sg_ses` (as usually a part of `sg3_utils` packages)
 
 ## Building from source:
 
