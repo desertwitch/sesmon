@@ -334,7 +334,7 @@ func (d *DeviceMonitor) fetchFromDevice(ctx context.Context) ([]byte, error) {
 	stdout, _, err := d.runner.Run(ctx, RunCommandConfig{
 		Description:     fmt.Sprintf("%q", "sg_ses"),
 		Command:         "sg_ses",
-		Args:            []string{"--all", "--json", d.device.Path},
+		Args:            []string{"--all", "--no-time", "--json", d.device.Path},
 		Attempts:        *d.cfg.PollAttempts,
 		AttemptTimeout:  *d.cfg.PollAttemptTimeout,
 		AttemptInterval: *d.cfg.PollAttemptInterval,
