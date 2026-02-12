@@ -187,6 +187,36 @@ devices:
     # Uses all default settings and no notification agent
 ```
 
+## `sg_ses 2.86 20230623` - Segmentation Fault (`--json`)
+
+Unfortunately, the most recent release of `sg_ses` (which `sesmon` calls upon) has a known issue in JSON mode:
+
+```
+>> join_arr elements=46, eip_count=14, eiioe_count=14 broken_ei=0
+Segmentation fault         sg_ses -vvvvvv --all --json --no-time /dev/sg12
+```
+
+This was traced back to a null-pointer dereference in the logic that produces the JSON output.
+
+The project (at the time of this writing) is unmaintained, hence this may need manual patching on your side:
+
+```diff
+$ diff -u src/sg_ses.c.old src/sg_ses.c
+--- src/sg_ses.c.old	2025-11-28 23:26:36.834129707 +0800
++++ src/sg_ses.c	2025-11-28 23:27:50.410288483 +0800
+@@ -6780,7 +6780,7 @@
+         if (jsp->pr_as_json) {
+             jo2p = sgj_new_unattached_object_r(jsp);
+             sgj_js_nv_ihexstr(jsp, jo2p, et_sn, jrp->etype, NULL, cp);
+-	    sgj_js_nv_s(jsp, jo2p, "descriptor", (const char *)(ed_bp + 4));
++	    if (ed_bp) sgj_js_nv_s(jsp, jo2p, "descriptor", (const char *)(ed_bp + 4));
+             sgj_js_nv_i(jsp, jo2p, "element_number", jrp->indiv_i);
+             sgj_js_nv_i(jsp, jo2p, "overall", (int)(-1 == jrp->indiv_i));
+             sgj_js_nv_b(jsp, jo2p, "individual", (-1 != jrp->indiv_i));
+```
+
+Please note that this is not an issue within `sesmon` itself, but rather the `sg_ses` binary that it depends on.
+
 ## License
 
 All code is licensed under the MIT License.
